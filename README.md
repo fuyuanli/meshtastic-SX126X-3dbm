@@ -39,6 +39,6 @@ pio run -e nrf52_promicro_diy_tcxo -j 4
 ```
 
 ## References
-
 - [Meshtastic Firmware](https://github.com/meshtastic/firmware)
+- [DIY Meshtastic 裝置! 使用 Faketec v5 + Ra-01SH-P 模組](https://becoder.org/DIY-Meshtastic-Faketec-v5-and-Ra-01SH-P/)
 - [RA-01SH-P Datasheet](https://web.archive.org/web/20250828015915/https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/docs/Specification/Ra-01SH-P_V1.0.3_Specification_cn_20250827.pdf)
