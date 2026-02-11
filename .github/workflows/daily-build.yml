@@ -56,11 +56,11 @@ jobs:
       run: |
         for file in firmware-nrf52_promicro_diy_tcxo-*.uf2; do
           VERSION=$(echo $file | sed 's/firmware-nrf52_promicro_diy_tcxo-\(.*\)\.uf2/\1/')
-          mv "$file" "firmware-sx126x-3dbm-${VERSION}.uf2"
+          mv "$file" "firmware-nrf52_promicro_diy-sx126x-3dbm-${VERSION}.uf2"
         done
         for file in firmware-nrf52_promicro_diy_tcxo-*.hex; do
           VERSION=$(echo $file | sed 's/firmware-nrf52_promicro_diy_tcxo-\(.*\)\.hex/\1/')
-          mv "$file" "firmware-sx126x-3dbm-${VERSION}.hex"
+          mv "$file" "firmware-nrf52_promicro_diy-sx126x-3dbm-${VERSION}.hex"
         done
     
     - name: Upload artifacts
