@@ -14,7 +14,6 @@ RA-01SH-P modules have integrated Power Amplifiers (PA) that require power limit
 ## Target Hardware
 
 - nRF52840 Pro Micro
-- TCXO variant
 - RA-01SH-P (SX1262) module
 
 ## Build Schedule
