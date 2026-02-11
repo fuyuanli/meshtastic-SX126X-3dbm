@@ -51,6 +51,16 @@ jobs:
         echo "version=$VERSION" >> $GITHUB_OUTPUT
         echo "date=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
     
+    - name: Rename firmware files
+      working-directory: firmware/.pio/build/nrf52_promicro_diy_tcxo
+      run: |
+        for file in firmware-nrf52_promicro_diy_tcxo-*.uf2; do
+          mv "$file" "$(echo $file | sed 's/nrf52_promicro_diy_tcxo/nrf52_promicro_diy/g')"
+        done
+        for file in firmware-nrf52_promicro_diy_tcxo-*.hex; do
+          mv "$file" "$(echo $file | sed 's/nrf52_promicro_diy_tcxo/nrf52_promicro_diy/g')"
+        done
+    
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
