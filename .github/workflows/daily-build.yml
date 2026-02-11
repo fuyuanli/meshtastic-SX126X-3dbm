@@ -80,7 +80,7 @@ jobs:
         body: |
           Auto-built Meshtastic firmware with SX126X power limited to 3dBm
           
-          **Target:** nRF52840 Pro Micro + TCXO
+          **Target:** nRF52840 Pro Micro
           **Module:** RA-01SH-P (SX1262)
           **Build Date:** ${{ steps.version.outputs.date }}
           **Version:** ${{ steps.version.outputs.version }}
