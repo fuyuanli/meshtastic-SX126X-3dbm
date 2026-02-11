@@ -5,6 +5,9 @@ on:
     - cron: '0 16 * * *'  # 每天 UTC 16:00 (台灣時間 00:00)
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-24.04
@@ -60,18 +63,20 @@ jobs:
     - name: Create Release
       uses: softprops/action-gh-release@v1
       with:
-        tag_name: v${{ steps.version.outputs.version }}-3dbm
-        name: Meshtastic ${{ steps.version.outputs.version }} (3dBm)
+        tag_name: v${{ steps.version.outputs.version }}-3dbm-${{ steps.version.outputs.date }}
+        name: Meshtastic ${{ steps.version.outputs.version }} (3dBm) - ${{ steps.version.outputs.date }}
         body: |
           Auto-built Meshtastic firmware with SX126X power limited to 3dBm
           
           **Target:** nRF52840 Pro Micro + TCXO
           **Modules:** RA-01SH-P / RA-01SCH-P
           **Build Date:** ${{ steps.version.outputs.date }}
+          **Version:** ${{ steps.version.outputs.version }}
           
           ⚠️ Power limited to 3dBm to protect PA
         files: firmware/.pio/build/nrf52_promicro_diy_tcxo/firmware*.uf2
         draft: false
         prerelease: false
+        fail_on_unmatched_files: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
