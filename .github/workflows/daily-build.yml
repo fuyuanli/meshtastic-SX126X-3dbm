@@ -35,7 +35,7 @@ jobs:
       run: |
         sed -i 's/\(RDEF([^,]*, [^,]*, [^,]*, [^,]*, [^,]*,\) [0-9]\+\(,\)/\1 3\2/g' src/mesh/RadioInterface.cpp
         sed -i '/SX126X_MAX_POWER/a\
-        // Limit SX126X power to 3dBm for RA-01SH-P/RA-01SCH-P modules\
+        // Limit SX126X (SX1262) power to 3dBm for RA-01SH-P module\
         #define SX126X_MAX_POWER 3
         ' variants/nrf52840/diy/nrf52_promicro_diy_tcxo/variant.h
     
@@ -69,7 +69,7 @@ jobs:
           Auto-built Meshtastic firmware with SX126X power limited to 3dBm
           
           **Target:** nRF52840 Pro Micro + TCXO
-          **Modules:** RA-01SH-P / RA-01SCH-P
+          **Module:** RA-01SH-P (SX1262)
           **Build Date:** ${{ steps.version.outputs.date }}
           **Version:** ${{ steps.version.outputs.version }}
           

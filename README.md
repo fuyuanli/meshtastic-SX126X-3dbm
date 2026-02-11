@@ -1,10 +1,10 @@
 # Meshtastic SX126X 3dBm Build
 
-Daily automated builds of Meshtastic firmware with SX126X power limited to 3dBm for RA-01SH-P/RA-01SCH-P modules.
+Daily automated builds of Meshtastic firmware with SX126X power limited to 3dBm for RA-01SH-P (SX1262) modules.
 
 ## Why 3dBm?
 
-RA-01SH-P and RA-01SCH-P modules have integrated Power Amplifiers (PA) that require power limiting to prevent damage.
+RA-01SH-P modules have integrated Power Amplifiers (PA) that require power limiting to prevent damage.
 
 ## Download
 
@@ -15,7 +15,7 @@ RA-01SH-P and RA-01SCH-P modules have integrated Power Amplifiers (PA) that requ
 
 - nRF52840 Pro Micro
 - TCXO variant
-- RA-01SH-P (SX1262) or RA-01SCH-P (LLCC68+) module
+- RA-01SH-P (SX1262) module
 
 ## Build Schedule
 
