@@ -55,10 +55,10 @@ jobs:
       working-directory: firmware/.pio/build/nrf52_promicro_diy_tcxo
       run: |
         for file in firmware-nrf52_promicro_diy_tcxo-*.uf2; do
-          mv "$file" "$(echo $file | sed 's/nrf52_promicro_diy_tcxo/nrf52_promicro_diy/g')"
+          mv "$file" "$(echo $file | sed 's/nrf52_promicro_diy_tcxo/sx126x-3dbm/g')"
         done
         for file in firmware-nrf52_promicro_diy_tcxo-*.hex; do
-          mv "$file" "$(echo $file | sed 's/nrf52_promicro_diy_tcxo/nrf52_promicro_diy/g')"
+          mv "$file" "$(echo $file | sed 's/nrf52_promicro_diy_tcxo/sx126x-3dbm/g')"
         done
     
     - name: Upload artifacts
