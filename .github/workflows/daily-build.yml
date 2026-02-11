@@ -8,14 +8,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-24.04
+    container:
+      image: infinitecoding/platformio-for-ci:latest
     
     steps:
-    - name: Install PlatformIO
-      run: |
-        sudo apt update && sudo apt install -y python3.12-venv
-        curl -fsSL -o get-platformio.py https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py
-        python3 get-platformio.py
-        echo "$HOME/.platformio/penv/bin" >> $GITHUB_PATH
+    - name: Cache PlatformIO
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.platformio
+        key: ${{ runner.os }}-pio-${{ hashFiles('firmware/platformio.ini') }}
+        restore-keys: |
+          ${{ runner.os }}-pio-
     
     - name: Clone Meshtastic firmware
       run: |
